@@ -3,9 +3,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modalStyle.css">
 </head>
 <body>
+    <div class="header-container">
+        <p>The rules: "Scissors decapitate Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors."</p>
+        <img src="assets/sheldon.png" alt="">
+    </div>
+
+    <div class="game-container">
+        <div class="player-side-container">
+            <div class="player-specified">
+                <h2 id="playerName">Player Name</h2>
+                <img id="charIcon" src="assets/sheldon.png" alt="">
+            </div>
+            <div class="btn-container">
+                <button id="btn" value="rock">Rock</button>
+                <button id="btn" value="paper">Paper</button>
+                <button id="btn" value="scissors">Scissors</button>
+            </div>     
+        </div>
+        <div class="play-game-container">
+            <div class="player-choose">
+                <img src="" alt="" class="rps-image" id="playerRpsImg">
+                <p id="player-score"></p>
+            </div>
+            <div class="enemy-choose">
+                <img src="" alt="" class="rps-image" id="enemyRpsImg">
+                <p id="enemy-score"></p>
+            </div>
+        </div>
+        <div class="enemy-container">
+            <img src="assets/realSpock.png" alt="">
+        </div>
+    </div>
+    <div id="resultContainer">
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="charSelection" class="char-selection">
+                <img src="assets/charIcons/howard.jpeg" alt="howard" id="char" class="char-icon">
+                <img src="assets/charIcons/leonard.jpeg" alt="leonard" id="char" class="char-icon">
+                <img src="assets/charIcons/penny.jpeg" alt="penny" id="char" class="char-icon">
+                <img src="assets/charIcons/raj.jpeg" alt="raj" id="char" class="char-icon">
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
-    
+    <script src="modalController.js"></script>
 </body>
 </html>
