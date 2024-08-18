@@ -2,6 +2,11 @@ console.log("Welcome to console RPS");
 let humanScore = 0;
 let computerScore = 0;
 let userChoise;
+const options = {
+    scissors: "assets/rps-icons/kelebek.jpeg",
+    paper: "assets/rps-icons/pap.jpeg",
+    rock: "assets/rps-icons/rock.png"
+};
 changePlayerName();
 document.querySelectorAll("#btn").forEach(button => {
     button.addEventListener("click", (event)=>{
@@ -42,10 +47,14 @@ function getHumanChoise(){
 
 
 function playRound(humanChoise, compChoise){
-
+    const playerChooseImg = document.querySelector("#playerRpsImg");
+    playerChooseImg.src = options[humanChoise];
+    playerChooseImg.style.display = "block";
+    const enemyChooseImg = document.querySelector("#enemyRpsImg");
+    enemyChooseImg.src = options[compChoise];
+    enemyChooseImg.style.display = "block";
     if((humanChoise === "rock" && compChoise === "scissors") || (humanChoise === "scissors" && compChoise === "paper") || (humanChoise === "paper" && compChoise === "rock")){
         humanScore++;
-        document.querySelector("#resultContainer").textContent=`human choise is ${humanChoise} computer choise is ${compChoise} so human win`;
     }
     else if(compChoise === humanChoise){
         console.log(`human choise is ${humanChoise} computer choise is ${compChoise} so it's a draw`);
@@ -54,10 +63,16 @@ function playRound(humanChoise, compChoise){
         computerScore++;
         console.log(`human choise is ${humanChoise} computer choise is ${compChoise} so human lost`);
     }
-    document.querySelector("#enemyChoise").textContent = compChoise;
-    document.querySelector("#playerChoise").textContent = humanChoise;
+    showScores();
+}
 
-
+function showScores(){
+    const playerScore = document.querySelector("#player-score");
+    const enemyScore = document.querySelector("#enemy-score");
+    console.log(humanScore);
+    console.log(computerScore);
+    playerScore.textContent = humanScore;
+    enemyScore.textContent = computerScore;
 }
 
 

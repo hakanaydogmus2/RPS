@@ -19,7 +19,12 @@
     margin-right: 40px;
     color: #333;
 }
-.enemy-container img,
+.enemy-container img{
+    max-width: 100px;
+    height: 100px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
 .header-container img {
     max-width: 100%;
     height: auto;
@@ -38,16 +43,25 @@
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.player-side-container{
+.enemy-container{
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 250px;
 }
+.player-side-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+}
 .player-specified{
     max-width: 500px;
     display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
@@ -70,5 +84,17 @@
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
+}
+#player-score,
+#enemy-score{
+    text-align: center;
+    
+}
+.rps-image{
+    display: none;
+    max-width: 100px;
+    height: 100px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
 }
 
