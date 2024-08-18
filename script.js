@@ -1,6 +1,18 @@
 console.log("Welcome to console RPS");
 let humanScore = 0;
 let computerScore = 0;
+let userChoise;
+changePlayerName();
+document.querySelectorAll("#btn").forEach(button => {
+    button.addEventListener("click", (event)=>{
+        userChoise = event.target.value;
+        playRound(getHumanChoise(), getComputerChoise());
+    })
+})
+function changePlayerName(){
+    let tempName = prompt("what is your name");
+    document.querySelector("#playerName").textContent = tempName;
+}
 function getComputerChoise(){
     let randomInt = Math.floor(Math.random() * 3);
     switch (randomInt) {
@@ -13,9 +25,8 @@ function getComputerChoise(){
     }
 }
 function getHumanChoise(){
-    let choise = prompt("What is your choise rock, paper, scissors");
-    let cleanChoise = choise.toLowerCase();
 
+    let cleanChoise = userChoise.toLowerCase();
     switch (cleanChoise) {
         case "rock":
             return "rock";
@@ -31,9 +42,10 @@ function getHumanChoise(){
 
 
 function playRound(humanChoise, compChoise){
+
     if((humanChoise === "rock" && compChoise === "scissors") || (humanChoise === "scissors" && compChoise === "paper") || (humanChoise === "paper" && compChoise === "rock")){
         humanScore++;
-        console.log(`human choise is ${humanChoise} computer choise is ${compChoise} so human win`);
+        document.querySelector("#resultContainer").textContent=`human choise is ${humanChoise} computer choise is ${compChoise} so human win`;
     }
     else if(compChoise === humanChoise){
         console.log(`human choise is ${humanChoise} computer choise is ${compChoise} so it's a draw`);
@@ -42,6 +54,9 @@ function playRound(humanChoise, compChoise){
         computerScore++;
         console.log(`human choise is ${humanChoise} computer choise is ${compChoise} so human lost`);
     }
+    document.querySelector("#enemyChoise").textContent = compChoise;
+    document.querySelector("#playerChoise").textContent = humanChoise;
+
 
 }
 
@@ -52,7 +67,7 @@ function playGame(){
     }
     console.log(`human score is ${humanScore} computer score is ${computerScore}`);
 }
-playGame();
+
 
 
 

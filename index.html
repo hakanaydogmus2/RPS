@@ -14,19 +14,33 @@
     <div class="game-container">
         <div class="player-side-container">
             <div class="player-specified">
-                <p>Player Name</p>
+                <p id="playerName">Player Name</p>
                 <img src="assets/rock.jpeg" alt="">
             </div>
             <div class="btn-container">
-                <button id="rock-btn">Rock</button>
-                <button id="paper-btn">Paper</button>
-                <button id="scissors-btn">Scissors</button>
+                <button id="btn" value="rock">Rock</button>
+                <button id="btn" value="paper">Paper</button>
+                <button id="btn" value="scissors">Scissors</button>
             </div>     
+        </div>
+        <div class="play-game-container">
+            <div class="player-choose">
+                <div class="player-score-container">player:2</div>
+                <p id="playerChoise">ROCK</p>
+            </div>
+            <div class="enemy-choose">
+                <div class="enemy-score-container">spock : 3</div>
+                <p id="enemyChoise">SCISSORS</p>
+            </div>
         </div>
         <div class="enemy-container">
             <h2>SPOCK</h2>
             <img src="assets/realSpock.png" alt="">
         </div>
     </div>
+    <div id="resultContainer">
+
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
